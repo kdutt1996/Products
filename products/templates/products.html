@@ -8,7 +8,7 @@
 
     <h1>Search & Filter Products</h1>
 
-    <form method="get" action="{% url 'product_search' %}">
+    <form id="filter-form" method="get" action="{% url 'product_search' %}">
         <input type="text" name="search" placeholder="Search..." value="{{ search_query|default:'' }}">
         <select name="category">
             <option value="">All Categories</option>
@@ -20,10 +20,13 @@
         </select>
         <select name="tags" multiple size="3">
             {% for tag in tags %}
-                <option value="{{ tag.id }}" {% if tag.id|stringformat:"s" in selected_tags %}selected{% endif %}>{{ tag.name }}</option>
+                <option value="{{ tag.id }}" {% if tag.id|stringformat:"s" in selected_tags %}selected{% endif %}>
+                    {{ tag.name }}
+                </option>
             {% endfor %}
         </select>
         <button type="submit">Go</button>
+        <button type="button" id="reset-filters">Reset All</button>
     </form>
 
     <h2>Results ({{ products.count }})</h2>
@@ -42,6 +45,27 @@
     {% empty %}
         <p>No products found.</p>
     {% endfor %}
+     
+    <script>
+      const form = document.getElementById("filter-form");
+      document.getElementById("reset-filters").addEventListener("click", function() {
+        // Clear search input
+        if (form.elements["search"]) {
+          form.elements["search"].value = "";
+        }
+        // Reset category dropdown
+        if (form.elements["category"]) {
+          form.elements["category"].selectedIndex = 0;
+        }
+        // Clear tags multi-select
+        if (form.elements["tags"]) {
+          const tagsSelect = form.elements["tags"];
+          for (let i = 0; i < tagsSelect.options.length; i++) {
+            tagsSelect.options[i].selected = false;
+          }
+        }
+      });
+    </script>
 
 </body>
 </html>
