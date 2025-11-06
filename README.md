@@ -18,16 +18,17 @@ Mini Django project that lets the user search products based on descriptions and
 
 ## Setup Instructions
 
-1. Clone the repository:  
-   ```bash
+1a. Clone the repository:  
    git clone https://github.com/yourusername/yourrepo.git
    cd yourrepo
+1b. Optionally download the files from git or from the submissions page
 
-2. python -m venv venv
+2. Create a virtual environment
+   python -m venv venv
    source venv/bin/activate        # On macOS/Linux
    venv\Scripts\activate           # On Windows
  
-3. pip install -r requirements.txt
+3. pip install -r requirements.txt #install all the dependencies
 4. python manage.py migrate
 5. python manage.py createsuperuser # to create an admin user. 
 6. python manage.py runserver
