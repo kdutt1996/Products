@@ -20,6 +20,7 @@ from django.shortcuts import redirect
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('products.urls')),  # ensures “search/” is reachable
+    path('', include('products.urls')),
+    
 ]
 
