@@ -19,8 +19,8 @@ Mini Django project that lets the user search products based on descriptions and
 ## Setup Instructions
 
 1a. Clone the repository:  
-   git clone https://github.com/yourusername/yourrepo.git
-   cd yourrepo
+   git clone https://github.com/kdutt1996/Products.git
+   cd Products
 1b. Optionally download the files from git or from the submissions page
 
 2. Create a virtual environment
@@ -30,7 +30,7 @@ Mini Django project that lets the user search products based on descriptions and
  
 3. pip install -r requirements.txt #install all the dependencies
 4. python manage.py migrate
-5. python manage.py createsuperuser # to create an admin user. 
+5. python manage.py createsuperuser # to create an admin user or login via username: remarcable pw: admin, from the DB 
 6. python manage.py runserver
 7. Admin interface: http://127.0.0.1:8000/admin/ (to add categories, tags, and products)
    Search/filter page: http://127.0.0.1:8000/ (users can search and filter products)

@@ -49,7 +49,7 @@
     <script>
       const form = document.getElementById("filter-form");
       document.getElementById("reset-filters").addEventListener("click", function() {
-        // Clear search input
+        // Clear search 
         if (form.elements["search"]) {
           form.elements["search"].value = "";
         }
@@ -57,7 +57,7 @@
         if (form.elements["category"]) {
           form.elements["category"].selectedIndex = 0;
         }
-        // Clear tags multi-select
+        // Clear tags 
         if (form.elements["tags"]) {
           const tagsSelect = form.elements["tags"];
           for (let i = 0; i < tagsSelect.options.length; i++) {

@@ -19,7 +19,7 @@ def product_list(request):
     if category_id:
         products = products.filter(category_id=category_id)
 
-    # Filter by tags (products that have all selected tags)
+    # Filter by tags or products that have all selected tags
     if tag_ids:
         products = products.filter(tags__id__in=tag_ids).distinct()
 
